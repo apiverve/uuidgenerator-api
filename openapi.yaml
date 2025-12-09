@@ -1,0 +1,91 @@
+openapi: 3.0.4
+info:
+  title: UUID Generator
+  description: UUID Generator is a tool for generating Universally Unique Identifiers (UUIDs). It creates RFC 4122 version 4 UUIDs with multiple formatting options for different platform requirements.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/uuidgenerator:
+    get:
+      summary: Generate UUID
+      description: UUID Generator is a tool for generating Universally Unique Identifiers (UUIDs). It creates RFC 4122 version 4 UUIDs with multiple formatting options for different platform requirements.
+      operationId: uuidgenerator
+      parameters:
+      - name: count
+        default: '1'
+        in: query
+        schema:
+          type: string
+        required: false
+        description: 'Number of UUIDs to generate (1-100, default: 1)'
+        example: '5'
+      - name: version
+        default: '4'
+        in: query
+        schema:
+          type: string
+        required: false
+        description: 'UUID version (only version 4 currently supported, default: 4)'
+        example: '4'
+      - name: format
+        default: default
+        in: query
+        schema:
+          type: string
+        required: false
+        description: "Format: 'default', 'uppercase', or 'nohyphens' (default: default)"
+        example: default
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  uuids:
+                  - 95d30c9d-e04e-47f8-b0c3-d2ebfe7b763e
+                  - b10ba17b-dc01-4301-85a7-9782ec44b48d
+                  - 02f659f1-477a-445a-8973-a4796b033c1d
+                  - d1507f24-2ad2-4b92-b233-462d32e110dd
+                  - 0a765495-00eb-4fef-b018-08e95de3d79b
+                  count: 5
+                  version: 4
+                  format: default
+                  variant: RFC 4122
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
