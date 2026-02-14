@@ -1,49 +1,49 @@
 openapi: 3.0.4
 info:
   title: UUID Generator
-  description: UUID Generator is a tool for generating Universally Unique Identifiers (UUIDs). It creates RFC 4122 version 4 UUIDs with multiple formatting options for different platform requirements.
+  description: >-
+    UUID Generator is a tool for generating Universally Unique Identifiers
+    (UUIDs). It creates RFC 4122 version 4 UUIDs with multiple formatting
+    options for different platform requirements.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/uuidgenerator:
     get:
       summary: Generate UUID
-      description: UUID Generator is a tool for generating Universally Unique Identifiers (UUIDs). It creates RFC 4122 version 4 UUIDs with multiple formatting options for different platform requirements.
+      description: Generate one or more RFC 4122 version 4 UUIDs
       operationId: uuidgenerator
       parameters:
-      - name: count
-        default: '1'
-        in: query
-        schema:
-          type: string
-        required: false
-        description: 'Number of UUIDs to generate (1-100, default: 1)'
-        example: '5'
-      - name: version
-        default: '4'
-        in: query
-        schema:
-          type: string
-        required: false
-        description: 'UUID version (only version 4 currently supported, default: 4)'
-        example: '4'
-      - name: format
-        default: default
-        in: query
-        schema:
-          type: string
-        required: false
-        description: "Format: 'default', 'uppercase', or 'nohyphens' (default: default)"
-        example: default
+        - name: count
+          in: query
+          schema:
+            type: integer
+          required: false
+          description: Number of UUIDs to generate
+          example: 5
+        - name: version
+          in: query
+          schema:
+            type: integer
+          required: false
+          description: UUID version (only version 4 currently supported)
+          example: 4
+        - name: format
+          in: query
+          schema:
+            type: string
+          required: false
+          description: Output format
+          example: default
       responses:
         '200':
           description: Successful Response
@@ -59,18 +59,18 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
                   uuids:
-                  - 95d30c9d-e04e-47f8-b0c3-d2ebfe7b763e
-                  - b10ba17b-dc01-4301-85a7-9782ec44b48d
-                  - 02f659f1-477a-445a-8973-a4796b033c1d
-                  - d1507f24-2ad2-4b92-b233-462d32e110dd
-                  - 0a765495-00eb-4fef-b018-08e95de3d79b
+                    - fd874c4e-4fc2-4a65-ab1e-46c7a141c3c3
+                    - 59f31559-dd12-46ff-a3d1-d7bd5eddb09b
+                    - f09b5f16-1b68-4082-acbc-38ce08de2fe4
+                    - c8c1b3d8-e927-43a7-840c-ced3964ca95f
+                    - aa3cb61e-096f-46fa-a12c-5f2b696186fb
                   count: 5
                   version: 4
                   format: default
@@ -80,7 +80,7 @@ paths:
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -88,4 +88,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
