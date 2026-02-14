@@ -15,8 +15,8 @@ const api = new uuidgeneratorAPI({
 
 // Example query
 var query = {
-  count: "5",
-  version: "4",
+  count: 1,
+  version: 4,
   format: "default"
 };
 
