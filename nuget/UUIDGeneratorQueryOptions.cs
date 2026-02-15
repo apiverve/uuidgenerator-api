@@ -11,22 +11,19 @@ namespace APIVerve.API.UUIDGenerator
     public class UUIDGeneratorQueryOptions
     {
         /// <summary>
-        /// Number of UUIDs to generate (1-100, default: 1)
-        /// Example: 5
+        /// Number of UUIDs to generate
         /// </summary>
         [JsonProperty("count")]
         public string Count { get; set; }
 
         /// <summary>
-        /// UUID version (only version 4 currently supported, default: 4)
-        /// Example: 4
+        /// UUID version (only version 4 currently supported)
         /// </summary>
         [JsonProperty("version")]
         public string Version { get; set; }
 
         /// <summary>
-        /// Format: 'default', 'uppercase', or 'nohyphens' (default: default)
-        /// Example: default
+        /// Output format
         /// </summary>
         [JsonProperty("format")]
         public string Format { get; set; }
