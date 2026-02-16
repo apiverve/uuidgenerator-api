@@ -44,7 +44,11 @@ from apiverve_uuidgenerator.apiClient import UuidgeneratorAPIClient
 # Initialize the client with your APIVerve API key
 api = UuidgeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "count": 1, "version": 4, "format": "default" }
+query = {
+    "count": 1,
+    "version": 4,
+    "format": "default"
+}
 
 try:
     # Make the API call
@@ -82,7 +86,11 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "count": 1, "version": 4, "format": "default" }
+query = {
+    "count": 1,
+    "version": 4,
+    "format": "default"
+}
 ```
 
 ###### Simple Request
@@ -130,7 +138,11 @@ from apiverve_uuidgenerator.apiClient import UuidgeneratorAPIClient, Uuidgenerat
 
 api = UuidgeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "count": 1, "version": 4, "format": "default" }
+query = {
+    "count": 1,
+    "version": 4,
+    "format": "default"
+}
 
 try:
     result = api.execute(query)
@@ -151,7 +163,11 @@ from apiverve_uuidgenerator.apiClient import UuidgeneratorAPIClient, Uuidgenerat
 
 api = UuidgeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "count": 1, "version": 4, "format": "default" }
+query = {
+    "count": 1,
+    "version": 4,
+    "format": "default"
+}
 
 try:
     result = api.execute(query)
@@ -185,7 +201,11 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_uuidgenerator.apiClient import UuidgeneratorAPIClient, UuidgeneratorAPIClientError
 
-query = { "count": 1, "version": 4, "format": "default" }
+query = {
+    "count": 1,
+    "version": 4,
+    "format": "default"
+}
 
 # Using context manager ensures proper cleanup
 with UuidgeneratorAPIClient("[YOUR_API_KEY]") as api:
@@ -211,7 +231,11 @@ from apiverve_uuidgenerator.apiClient import UuidgeneratorAPIClient
 # Enable debug mode
 api = UuidgeneratorAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "count": 1, "version": 4, "format": "default" }
+query = {
+    "count": 1,
+    "version": 4,
+    "format": "default"
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -226,8 +250,13 @@ from apiverve_uuidgenerator.apiClient import UuidgeneratorAPIClient
 
 api = UuidgeneratorAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "count": 1,
+    "version": 4,
+    "format": "default"
+}
+
 try:
-    query = { "count": 1, "version": 4, "format": "default" }
     result = api.execute(query)
     print(result)
 finally:
