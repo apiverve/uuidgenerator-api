@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/uuidgenerator",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "UUID Generator is a tool for generating Universally Unique Identifiers (UUIDs). It creates RFC 4122 version 4 UUIDs with multiple formatting options for different platform requirements.",
   "main": "index.js",
   "types": "index.d.ts",
