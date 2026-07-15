@@ -12,8 +12,14 @@ public class BasicExample {
         UUIDGeneratorAPIClient client = new UUIDGeneratorAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Execute the API request (no parameters required)
-            APIResponse response = client.execute(null);
+            // Query parameters
+            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
+        parameters.put(&quot;count&quot;, 5);
+        parameters.put(&quot;version&quot;, 4);
+        parameters.put(&quot;format&quot;, &quot;default&quot;);
+
+            // Execute the API request
+            APIResponse response = client.execute(parameters);
 
             // Check if the request was successful
             if (response.isSuccess()) {
