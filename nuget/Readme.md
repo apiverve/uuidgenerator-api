@@ -51,7 +51,7 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.UUIDGenerator;
 
 class Program
 {
@@ -60,10 +60,10 @@ class Program
         // Initialize the API client
         var apiClient = new UUIDGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    count = 1,
-    version = 4,
-    format = "default"
+        var queryOptions = new UUIDGeneratorQueryOptions {
+    Count = 1,
+    Version = 4,
+    Format = "default"
 };
 
         // Make the API call
@@ -118,7 +118,7 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.UUIDGenerator;
 
 public class Example
 {
@@ -126,10 +126,10 @@ public class Example
     {
         var apiClient = new UUIDGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    count = 1,
-    version = 4,
-    format = "default"
+        var queryOptions = new UUIDGeneratorQueryOptions {
+    Count = 1,
+    Version = 4,
+    Format = "default"
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -152,7 +152,7 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.UUIDGenerator;
 
 public class Example
 {
@@ -160,10 +160,10 @@ public class Example
     {
         var apiClient = new UUIDGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    count = 1,
-    version = 4,
-    format = "default"
+        var queryOptions = new UUIDGeneratorQueryOptions {
+    Count = 1,
+    Version = 4,
+    Format = "default"
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -191,7 +191,7 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.UUIDGenerator;
 
 public class Example
 {
@@ -199,10 +199,10 @@ public class Example
     {
         var apiClient = new UUIDGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    count = 1,
-    version = 4,
-    format = "default"
+        var queryOptions = new UUIDGeneratorQueryOptions {
+    Count = 1,
+    Version = 4,
+    Format = "default"
 };
 
         try
@@ -245,7 +245,7 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.UUIDGenerator;
 
 public class Example
 {
@@ -257,10 +257,10 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
-    count = 1,
-    version = 4,
-    format = "default"
+        var queryOptions = new UUIDGeneratorQueryOptions {
+    Count = 1,
+    Version = 4,
+    Format = "default"
 };
 
         try
@@ -300,10 +300,10 @@ var apiClient = new UUIDGeneratorAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
-    count = 1,
-    version = 4,
-    format = "default"
+var queryOptions = new UUIDGeneratorQueryOptions {
+    Count = 1,
+    Version = 4,
+    Format = "default"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -328,10 +328,10 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
-    count = 1,
-    version = 4,
-    format = "default"
+var queryOptions = new UUIDGeneratorQueryOptions {
+    Count = 1,
+    Version = 4,
+    Format = "default"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -348,10 +348,10 @@ var apiClient = new UUIDGeneratorAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
-    count = 1,
-    version = 4,
-    format = "default"
+var queryOptions = new UUIDGeneratorQueryOptions {
+    Count = 1,
+    Version = 4,
+    Format = "default"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -362,10 +362,10 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
-    count = 1,
-    version = 4,
-    format = "default"
+var queryOptions = new UUIDGeneratorQueryOptions {
+    Count = 1,
+    Version = 4,
+    Format = "default"
 };
 
 using (var apiClient = new UUIDGeneratorAPIClient("[YOUR_API_KEY]"))
@@ -386,11 +386,11 @@ using (var apiClient = new UUIDGeneratorAPIClient("[YOUR_API_KEY]"))
   "error": null,
   "data": {
     "uuids": [
-      "95d30c9d-e04e-47f8-b0c3-d2ebfe7b763e",
-      "b10ba17b-dc01-4301-85a7-9782ec44b48d",
-      "02f659f1-477a-445a-8973-a4796b033c1d",
-      "d1507f24-2ad2-4b92-b233-462d32e110dd",
-      "0a765495-00eb-4fef-b018-08e95de3d79b"
+      "fd874c4e-4fc2-4a65-ab1e-46c7a141c3c3",
+      "59f31559-dd12-46ff-a3d1-d7bd5eddb09b",
+      "f09b5f16-1b68-4082-acbc-38ce08de2fe4",
+      "c8c1b3d8-e927-43a7-840c-ced3964ca95f",
+      "aa3cb61e-096f-46fa-a12c-5f2b696186fb"
     ],
     "count": 5,
     "version": 4,
