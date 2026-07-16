@@ -25,23 +25,38 @@ namespace APIVerve.API.UUIDGenerator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("uuids")]
-        public Guid[] Uuids { get; set; }
+        public Guid?[] Uuids { get; set; }
 
         [JsonProperty("count")]
-        public long Count { get; set; }
+        public long? Count { get; set; }
 
         [JsonProperty("version")]
-        public long Version { get; set; }
+        public long? Version { get; set; }
 
         [JsonProperty("format")]
         public string Format { get; set; }
 
         [JsonProperty("variant")]
         public string Variant { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
