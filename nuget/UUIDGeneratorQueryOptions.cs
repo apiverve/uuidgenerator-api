@@ -14,13 +14,13 @@ namespace APIVerve.API.UUIDGenerator
         /// Number of UUIDs to generate
         /// </summary>
         [JsonProperty("count")]
-        public string Count { get; set; }
+        public int? Count { get; set; }
 
         /// <summary>
         /// UUID version (only version 4 currently supported)
         /// </summary>
         [JsonProperty("version")]
-        public string Version { get; set; }
+        public int? Version { get; set; }
 
         /// <summary>
         /// Output format
