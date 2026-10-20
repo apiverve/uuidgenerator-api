@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/uuidgenerator",
-  "version": "1.2.0",
-  "description": "UUID Generator is a tool for generating Universally Unique Identifiers (UUIDs). It creates RFC 4122 version 4 UUIDs with multiple formatting options for different platform requirements.",
+  "version": "1.2.2",
+  "description": "UUID Generator is a UUID generator API that produces random RFC 4122 version 4 UUIDs on demand. Request single IDs or batches in standard lowercase, uppercase, or strings without hyphens.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "uuid", "uuid generator", "universally unique identifier", "unique id", "rfc 4122"
+    "uuid generator api", "uuid api", "generate uuid api", "uuid generator", "uuid v4"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/uuidgenerator-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/uuidgenerator?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/uuidgenerator?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
