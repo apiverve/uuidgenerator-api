@@ -1,13 +1,13 @@
-# [UUID Generator API](https://apiverve.com/marketplace/uuidgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [UUID Generator API](https://apiverve.com/marketplace/uuidgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-UUID Generator is a tool for generating Universally Unique Identifiers (UUIDs). It creates RFC 4122 version 4 UUIDs with multiple formatting options for different platform requirements.
+UUID Generator is a UUID generator API that produces random RFC 4122 version 4 UUIDs on demand. Request single IDs or batches in standard lowercase, uppercase, or strings without hyphens.
 
 The UUID Generator API provides a simple, reliable way to integrate uuid generator functionality into your applications. Built for developers who need production-ready uuid generator capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/uuidgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/uuidgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/uuidgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/uuidgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -163,7 +163,7 @@ go get github.com/apiverve/uuidgenerator-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [UUID Generator API](https://apiverve.com/marketplace/uuidgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [UUID Generator API](https://apiverve.com/marketplace/uuidgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/uuidgenerator](https://docs.apiverve.com/ref/uuidgenerator)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -193,11 +193,38 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the UUID Generator API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "uuids": [
+      "fd874c4e-4fc2-4a65-ab1e-46c7a141c3c3",
+      "59f31559-dd12-46ff-a3d1-d7bd5eddb09b",
+      "f09b5f16-1b68-4082-acbc-38ce08de2fe4",
+      "c8c1b3d8-e927-43a7-840c-ced3964ca95f",
+      "aa3cb61e-096f-46fa-a12c-5f2b696186fb"
+    ],
+    "count": 5,
+    "version": 4,
+    "format": "default",
+    "variant": "RFC 4122"
+  }
 }
 ```
 
@@ -205,7 +232,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [UUID Generator API](https://apiverve.com/marketplace/uuidgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [UUID Generator API](https://apiverve.com/marketplace/uuidgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)

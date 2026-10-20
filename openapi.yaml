@@ -2,9 +2,9 @@ openapi: 3.0.4
 info:
   title: UUID Generator
   description: >-
-    UUID Generator is a tool for generating Universally Unique Identifiers
-    (UUIDs). It creates RFC 4122 version 4 UUIDs with multiple formatting
-    options for different platform requirements.
+    UUID Generator is a UUID generator API that produces random RFC 4122 version
+    4 UUIDs on demand. Request single IDs or batches in standard lowercase,
+    uppercase, or strings without hyphens.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,7 +19,7 @@ servers:
 paths:
   /v1/uuidgenerator:
     get:
-      summary: Generate UUID
+      summary: UUID Generator
       description: Generate one or more RFC 4122 version 4 UUIDs
       operationId: uuidgenerator
       parameters:
