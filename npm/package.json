@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/uuidgenerator",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "UUID Generator is a UUID generator API that produces random RFC 4122 version 4 UUIDs on demand. Request single IDs or batches in standard lowercase, uppercase, or strings without hyphens.",
   "main": "index.js",
   "types": "index.d.ts",
